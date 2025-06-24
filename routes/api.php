@@ -11,7 +11,7 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::middleware(['auth:sanctum', 'ability:'.TokenAbility::ISSUE_ACCESS_TOKEN->value])->group(function () {
     Route::get('/refresh-token', [AuthController::class, 'refreshToken']);
 });
-Route::middleware(['auth:sanctum'])->group(function () {
-    Route::get('/logout', [AuthController::class, 'logout']);
+Route::middleware(['auth.token'])->group(function () {
+    Route::post('/logout', [AuthController::class, 'logout']);
     Route::apiResource('users', UserController::class);
 });

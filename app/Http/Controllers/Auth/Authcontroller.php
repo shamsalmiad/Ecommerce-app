@@ -5,15 +5,12 @@ namespace App\Http\Controllers\Auth;
 use App\Enums\TokenAbility;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
-use App\Http\Resources\Authentication\UserBasicResource;
 use App\Http\Resources\User\UserResource;
-use App\Models\Authentication\LoginHistory;
 use App\Models\User;
 use App\Services\ApiResponseService;
 use App\Services\AuthService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 use Symfony\Component\HttpFoundation\Response;
 
 class AuthController extends Controller
